@@ -2,6 +2,7 @@ import Todo from './Todo'
 import './App.css'
 import Actor from './Actor';
 import Singer from './Singer';
+import Library from './Library';
 function App() {
   const time = 50;
   const actors=['Oamr Sunny','Bappa Raj'];
@@ -9,9 +10,14 @@ function App() {
     {id:1,name:'karim',age:35},
     {id:2,name:'tahsan',age:54}
   ]
+  const books =[
+    {id:1,name:'physics',price:350},
+    {id:2,name:'chemistry',price:540}
+  ]
   return (
     <>
       <h1>Vite + React</h1>
+      <Library books={books}></Library>
       {
          singers.map(singer=><Singer key={singer.id} singer={singer}></Singer>)
       }
