@@ -1,19 +1,31 @@
 import Todo from './Todo'
 import './App.css'
-
+import Actor from './Actor';
+import Singer from './Singer';
 function App() {
   const time = 50;
+  const actors=['Oamr Sunny','Bappa Raj'];
+  const singers =[
+    {id:1,name:'karim',age:35},
+    {id:2,name:'tahsan',age:54}
+  ]
   return (
     <>
       <h1>Vite + React</h1>
-      <Todo task="learn react" isDone={true} time={time}></Todo>
+      {
+         singers.map(singer=><Singer key={singer.id} singer={singer}></Singer>)
+      }
+      {
+        actors.map(actor=> <Actor key={actor} actor={actor}></Actor>)
+      }
+      {/* <Todo task="learn react" isDone={true} time={time}></Todo>
       <Todo task="learn js" isDone={false} time="100"></Todo>
       <p>I am Ohee</p>
       <Reuse></Reuse>
       <Player></Player>
       <Address></Address>
       <Developer name="rahin" tech="react"></Developer>
-      <Sports name="mushi" runs="5000"></Sports>
+      <Sports name="mushi" runs="5000"></Sports> */}
     </>
   )
 }
